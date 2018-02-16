@@ -1,0 +1,18 @@
+Upadte
+-------
+User create is - ok
+Apply leave is - ok /need to optimize with validation of aleady entered record
+Apply leave deduction - ok
+Leave report - ok 
+
+
+
+
+
+
+unwanted
+---------
+back
+remove_html
+
+

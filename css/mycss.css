@@ -1,0 +1,110 @@
+.nav-wrapper {
+
+    background: #00d2ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #00d2ff, #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #52E8D9, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#frame {
+
+}
+
+.row {
+    padding-top: 5%;
+
+}
+
+h3, h5 {
+
+    color: #37474f;
+
+}
+
+#hedder {
+
+    text-align: center;
+
+}
+
+#Datefunction {
+
+    margin-left: 150px;
+
+}
+
+#UserName {
+    font-size: 50px;
+    margin-left: 150px;
+    color: #40D2C8;
+
+}
+
+#TotleLeave {
+    align-content: center;
+    border: 0.5px solid;
+    border: solid;
+    border-color: #00acc1;
+    border-radius: 25px;
+    height: 200px;
+    width: 50%;
+    margin-left: 26%;
+}
+
+#UseLeave {
+    border-radius: 25px;
+    border-radius: 20;
+    border: solid;
+    border-color: #00acc1;
+    height: 200px;
+
+}
+
+#Remaining {
+    border-radius: 20;
+    border: solid;
+    border-color: #00acc1;
+    border-radius: 25px;
+    height: 200px;
+}
+
+#TotleNo {
+    font-size: 90px;
+    color: #40D2C8;
+}
+
+#boxAnual{
+    color: #01579b;
+
+}
+
+#boxMedicul{
+
+    color: #01579b;
+
+}
+
+#boxCasual{
+
+    color: #01579b;
+
+}
+
+
+#boxcoler1{
+    color: #90a4ae;
+}
+
+#boxcoler2{
+    color: #90a4ae;
+}
+
+#boxcoler3{
+    color: #90a4ae;
+}
+#buot{
+
+    margin-left: 60px;
+
+
+}

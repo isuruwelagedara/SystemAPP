@@ -1,0 +1,62 @@
+<?php
+ob_start();
+session_start();
+require_once 'dbconnect.php';
+
+// it will never let you open index(login) page if session is set
+if ( isset($_SESSION['user'])!="" ) {
+    header("Location: home.php");
+    exit;
+}
+
+$error = false;
+
+if( isset($_POST['btn-login']) ) {
+
+    // prevent sql injections/ clear user invalid inputs
+    $EPF = trim($_POST['epf']);
+    $EPF = strip_tags($EPF);
+    $EPF = htmlspecialchars($EPF);
+
+    $pass = trim($_POST['pass']);
+    $pass = strip_tags($pass);
+    $pass = htmlspecialchars($pass);
+    // prevent sql injections / clear user invalid inputs
+
+    if(empty($EPF)){
+        $error = true;
+        $EPFError = "Please enter your EPF Number.";
+    } else if ( !filter_var($EPF,FILTER_VALIDATE_INT) ) {
+        $error = true;
+        $EPFError = "Please enter valid email address.";
+    }
+
+    if(empty($pass)){
+        $error = true;
+        $passError = "Please enter your password.";
+    }
+
+    // if there's no error, continue to login
+    if (!$error) {
+
+        $password = hash('sha256', $pass); // password hashing using SHA256
+
+        $res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEPF='$EPF'");
+        $row=mysql_fetch_array($res);
+        $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
+
+
+        if( $count == 1 && $row['userPass']==$password ) {
+            $_SESSION['user'] = $row['userId'];
+            header("Location: home.php");
+        } else {
+            $errMSG = "Incorrect Credentials, Try again...";
+        }
+
+    }
+
+}
+?>
+
+<?php ob_end_flush(); ?>
+
